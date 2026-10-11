@@ -1,0 +1,55 @@
+# DERMA-GUARD: Pre-Registration Specification
+# This file must be committed to the repository and hashed BEFORE running evaluations on the test split.
+version: "2.0.0-frozen"
+timestamp: "2026-10-15T00:00:00Z"
+target_repository: "https://github.com/X-Rachit-X/Derma_Guard_Updated"
+
+hypothesis_testing:
+  primary_hypothesis: "H1_Coverage_Advantage"
+  description: "EADE achieves higher coverage than confidence abstention (B3) at matched malignancy risk alpha <= 0.05"
+  nominal_risk_alpha: 0.05
+  confidence_level_1_minus_delta: 0.90
+  delta: 0.10
+  statistical_test: "paired_lesion_bootstrap"
+  bootstrap_resamples: 2000
+  significance_threshold: 0.05
+
+cost_parameters:
+  loss_malignancy_missed: 10.0      # Critical clinical error penalty
+  loss_false_alarm: 1.0             # Benign lesion flagged as malignant
+  loss_concordant: 0.0              # Correct classification
+  cost_acquisition_dermoscopy: 0.25 # Cost of acquiring contact dermoscopy
+  cost_human_deferral: 0.50         # Cost of dermatologist clinical review
+  max_acquisition_rounds: 1         # T_max
+
+dataset:
+  name: "MILK10k"
+  cohort_size_lesions: 5240
+  paired_images_total: 10480
+  split_ratios:
+    train: 0.60
+    validation: 0.15
+    calibration: 0.10
+    test: 0.15
+  stratification: ["lesion_id", "diagnosis", "skin_tone"]
+  leakage_prevention: "strict_lesion_level_separation"
+
+baselines_evaluated:
+  - id: "B1"
+    name: "Clinical_Only_Fixed"
+  - id: "B2"
+    name: "Fused_Fully_Acquired"
+  - id: "B3"
+    name: "Confidence_Abstention_LTT"
+  - id: "B4"
+    name: "Learning_To_Defer_Mozannar"
+  - id: "B5"
+    name: "HOT_Entropy_Acquisition"
+  - id: "B6"
+    name: "Greedy_Info_Gain_Ensemble"
+  - id: "B7"
+    name: "Random_Acquisition"
+  - id: "B8"
+    name: "Oracle_Acquisition"
+  - id: "OURS"
+    name: "EADE_Expected_Loss_LTT"
