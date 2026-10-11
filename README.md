@@ -6,7 +6,7 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110+-009688.svg)](https://fastapi.tiangolo.com/)
 [![Next.js](https://img.shields.io/badge/Next.js-14-black.svg)](https://nextjs.org/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16%2Bpgvector-336791.svg)](https://www.postgresql.org/)
-[![Paper](https://img.shields.io/badge/IEEE-Paper_Draft-informational.svg)](./paper/derma_guard_ieee_paper.tex)
+[![Paper](https://img.shields.io/badge/IEEE-Paper_Draft-informational.svg)](./paper/main.tex)
 
 > ⚠️ **Research Prototype Notice:** DERMA-GUARD is an academic research platform and teledermatology decision framework. It is **not** a certified medical device and does not provide autonomous medical diagnoses.
 
@@ -126,9 +126,9 @@ The documentation is organized into a sequential, concept-building learning curr
 
 The full scientific paper has been compiled into an IEEE-format LaTeX document ready for immediate Overleaf compilation:
 
-- **Source File:** [`paper/derma_guard_ieee_paper.tex`](./paper/derma_guard_ieee_paper.tex)
+- **Source File:** [`paper/main.tex`](./paper/main.tex)
 - **Compilation Guide:** [`paper/README.md`](./paper/README.md)
-- **Features:** Double-column `IEEEtran` format, 29 academic bibliography citations, baseline comparisons across B1–B8, and formal LTT theorem statements.
+- **Features:** Double-column `IEEEtran` format, 30 academic bibliography citations, baseline comparisons across B1–B8, and formal LTT theorem statements.
 
 ---
 
@@ -141,7 +141,7 @@ Derma_Guard_Updated/
 ├── configs/
 │   └── prereg.yaml                     # Pre-registered experimental parameters & cost matrix
 ├── paper/
-│   ├── derma_guard_ieee_paper.tex      # Full IEEE research paper LaTeX draft
+│   ├── main.tex                        # Full IEEE research paper LaTeX draft (Overleaf ready)
 │   └── README.md                       # Overleaf compilation & setup instructions
 └── docs/
     ├── 00_START_HERE.md                # Curriculum index & learning roadmap

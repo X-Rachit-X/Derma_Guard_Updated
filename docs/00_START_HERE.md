@@ -108,14 +108,14 @@ If you only have 15 minutes, understand these five things:
 
 ---
 
-## 📁 Other Files in This Folder
+## 📁 Other Files in This Repository
 
 | File | Description |
 |------|-------------|
-| `DERMA_GUARD_Final_Project_Specification.md` | v1.0 specification (superseded by v2.0) |
-| `DERMA_GUARD_v2_Project_Specification.md` | **Authoritative v2.0 specification** — source of truth |
-| `DERMA_GUARD_Literature_Survey_v2.md` | Related work audit document |
-| `derma_guard_ieee_paper.tex` | Overleaf-ready IEEE paper (generated) |
+| [`DERMA_GUARD_v2_Project_Specification.md`](./DERMA_GUARD_v2_Project_Specification.md) | **Authoritative v2.0 specification** — primary source of truth |
+| [`DERMA_GUARD_Literature_Survey_v2.md`](./DERMA_GUARD_Literature_Survey_v2.md) | Complete related work audit and base paper dossier |
+| [`DERMA_GUARD_v1_Specification_Archive.md`](./DERMA_GUARD_v1_Specification_Archive.md) | Archived v1.0 specification (superseded by v2.0) |
+| [`../paper/main.tex`](../paper/main.tex) | Overleaf-ready IEEE formatted research paper draft |
 
 ---
 

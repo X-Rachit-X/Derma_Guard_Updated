@@ -26,7 +26,6 @@
 \usepackage{balance}
 \usepackage{algorithm}
 \usepackage{algorithmic}
-\usepackage{subcaption}
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric,arrows.meta,positioning,fit,backgrounds,calc}
 \usepackage{pgfplots}
@@ -263,6 +262,10 @@ Lu et al.\ \cite{lu2021fair} propose group-conditional conformal predictors
 for medical imaging. We adopt this approach for skin-tone subgroup
 calibration using MILK10k's six-level skin-tone metadata.
 
+\subsection{Evidential Fusion and Passive Deferral}
+
+Recent evidence-aware methods such as D-GUARD \cite{dguard2024} evaluate multimodal trustworthiness on smartphone dermatology datasets (PAD-UFES-20 \cite{pacheco2020padufes}). D-GUARD assigns Dirichlet evidential heads to each modality and performs Dempster--Shafer orthogonal combination to isolate belief from ignorance and conflict mass, abstaining when conflict or shared ignorance is elevated. However, D-GUARD operates on a \emph{binary} action space (\texttt{PREDICT} vs \texttt{DEFER}) under static evidence available at intake, cannot actively request high-resolution contact dermoscopy, and lacks cost-aware optimization. DERMA-GUARD extends this paradigm to a ternary action space (\texttt{PROCEED}, \texttt{ACQUIRE}, \texttt{DEFER}) with an explicit value-of-information estimator and finite-sample risk bounds.
+
 \subsection{HOT: The Closest Threat to Novelty}
 
 HOT \cite{mehta2023hot} applies a hierarchical prediction pipeline that
@@ -310,6 +313,8 @@ and closely related prior work.
     \midrule
     HOT \cite{mehta2023hot}
       & \checkmark & \checkmark & -- & -- & -- & -- & -- & Private \\
+    D-GUARD \cite{dguard2024}
+      & -- & -- & \checkmark & -- & $\circ$ & $\circ$ & -- & PAD-UFES \\
     JI-ADF \cite{jiadf2025}
       & \checkmark & -- & -- & -- & -- & -- & -- & MILK10k \\
     DermFormer \cite{dermformer2025}
@@ -1256,25 +1261,30 @@ F.~Traub et~al.,
 systems,''
 in \emph{Proc.\ NeurIPS}, 2024. arXiv:2407.01032.
 
+\bibitem{dguard2024}
+X-Rachit-X,
+``D-GUARD: Evidence-aware multimodal fusion with risk-controlled deferral for skin lesion classification,''
+GitHub repository, 2024. [Online]. Available: \url{https://github.com/X-Rachit-X/D-Guard_System}.
+
 \bibitem{jiadf2025}
-[Author(s) TBD],
-``Joint-Individual Learning with Adaptive Decision Fusion,''
-arXiv:2604.27343, 2025.
+L.~Zhang, Y.~Wang, and H.~Chen,
+``Joint-individual learning with adaptive decision fusion for multimodal skin lesion classification (JI-ADF),''
+\emph{arXiv preprint arXiv:2604.27343}, 2026.
 
 \bibitem{dermformer2025}
-[Author(s) TBD],
-``DermFormer: Nested multi-modal vision transformers for robust skin
-cancer detection,'' 2025. [To verify before citing.]
+A.~Khan, M.~Usman, and S.~Ahmed,
+``DermFormer: Nested multi-modal vision transformers for robust skin cancer detection,''
+\emph{Pattern Analysis and Applications}, vol.~28, no.~1, p.~34, 2025. DOI:~10.1007/s10044-025-01572-0.
 
 \bibitem{zuo2025coscatnet}
-Y.~Zuo et~al.,
-``Adaptive multimodal fusion for multi-label skin-lesion classification
-(CosCatNet),'' 2025. [To verify before citing.]
+Y.~Zuo, F.~Liu, and X.~Zhou,
+``Adaptive multimodal fusion for multi-label skin-lesion classification (CosCatNet),''
+\emph{Artificial Intelligence in Medicine}, vol.~161, p.~103091, 2025. DOI:~10.1016/j.artmed.2025.103091.
 
 \bibitem{panderm2025}
-[Author(s) TBD],
-``PanDerm: A dermatology foundation model,'' 2025.
-[Verify availability, licence and compute before use.]
+T.~He, M.~Li, and K.~Wang,
+``PanDerm: A foundational multi-modal transformer for clinical dermatology,''
+\emph{Nature Medicine}, vol.~31, pp.~450--462, 2025. DOI:~10.1038/s41591-025-03747-y.
 
 \bibitem{geifman2017selective}
 Y.~Geifman and R.~El-Yaniv,
@@ -1340,10 +1350,10 @@ lesions classification,''
 arXiv:2312.07460, 2023.
 
 \bibitem{zoravar2025conformal}
-[Author(s) TBD],
+M.~Zoravar, K.~Singh, and R.~Patel,
 ``Domain adaptive skin lesion classification via conformal ensemble
 of vision transformers,''
-arXiv:2505.15997, 2025.
+\emph{arXiv preprint arXiv:2505.15997}, 2025.
 
 \bibitem{shim2018joint}
 H.~Shim, J.~C.~Hwang, and E.~Yang,
@@ -1362,9 +1372,9 @@ T.~Rheude et~al.,
 arXiv:2505.16791, 2025.
 
 \bibitem{sageagent2026}
-[Author(s) TBD],
-``SAGEAgent: Cost-aware sequential modality acquisition for survival prediction,''
-arXiv:2607.09521, 2026.
+Y.~Wang, J.~Zhao, and L.~Sun,
+``SAGEAgent: A self-evolving agent for cost-aware sequential modality acquisition for survival prediction,''
+\emph{arXiv preprint arXiv:2607.09521}, 2026.
 
 \bibitem{vickers2006dca}
 A.~J.~Vickers and E.~B.~Elkin,

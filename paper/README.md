@@ -2,16 +2,16 @@
 
 This directory contains the complete IEEE-format research paper source for **DERMA-GUARD**.
 
-- File: [`derma_guard_ieee_paper.tex`](./derma_guard_ieee_paper.tex)
+- File: [`main.tex`](./main.tex)
 - Format: Standard double-column `IEEEtran` document class.
-- Status: Complete Overleaf-ready draft with 29 formal academic citations, comprehensive baseline comparisons, mathematical formulations, and experimental tables.
+- Status: Complete Overleaf-ready draft with 30 formal academic citations, comprehensive baseline comparisons, mathematical formulations, and experimental tables.
 
 ---
 
 ## 🚀 How to Compile in Overleaf
 
 1. Go to [Overleaf](https://www.overleaf.com) and click **New Project** → **Upload Project** (or **Blank Project**).
-2. Copy the content of [`derma_guard_ieee_paper.tex`](./derma_guard_ieee_paper.tex) into your `main.tex` (or upload the `.tex` file directly).
+2. Upload [`main.tex`](./main.tex) directly. Overleaf automatically detects `main.tex` as the root document.
 3. Under Overleaf **Menu** (top left):
    - **Compiler:** Select `pdfLaTeX` (or `XeLaTeX`).
    - **TeX Live version:** `2023` or later.
